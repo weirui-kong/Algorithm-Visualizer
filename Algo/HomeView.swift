@@ -13,13 +13,13 @@ struct HomeView: View {
     @State var scale: Double = 1
     @State var signAni = true
     var animation: Animation {
-           Animation.spring() //设置动画的时间曲线为弹性样式
-            .repeatForever() //设置动画的播放为无限循环模式
-            .repeatForever(autoreverses: true) //使动画来回反弹
+        Animation.spring(response: 0.7) //设置动画的时间曲线为弹性样式
+            //.repeatForever() //设置动画的播放为无限循环模式
+            .repeatForever(autoreverses: signAni) //使动画来回反弹
+            
        }
     
     var body: some View {
-        
         VStack{
             Spacer()
             Spacer()

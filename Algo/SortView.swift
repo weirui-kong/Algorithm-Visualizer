@@ -8,11 +8,11 @@
 import SwiftUI
 
 
-let BarWidth: CGFloat = 10
+let BarWidth: CGFloat = 20
 let BarMaxHeight: CGFloat = 200
-let BarUnit: CGFloat = 10
-let BarColor_Default: Color = .orange
-let BarColr_Selected: Color = .red
+let BarUnit: CGFloat = 20
+let BarColor_Default: Color = .white
+let BarColr_Selected: Color = .purple
 
 var timer: Timer?
 var generalCounter: Int = 0
@@ -20,16 +20,18 @@ var cockTailShaker: Bool = false // this allows to visualize 'cocktail shaker' w
 
 enum Sorting {
     case bubble, selection, quick, merge, cocktail
+    
     var sortingSpeed: TimeInterval {
         switch self {
-        case .bubble:       return 0.4
-        case .selection:   return 0.8
-        case .quick:        return 1.0
-        case .merge:        return 1.0
-        case .cocktail:     return 0.5
+        case .bubble:       return 0.6
+        case .selection:   return 1.0
+        case .quick:        return 1.3
+        case .merge:        return 1.3
+        case .cocktail:     return 0.8
         }
     }
 }
+
 //========================= INIT =========================
 /*
  This returns bars list to be rendered based on the screen width
@@ -37,7 +39,10 @@ enum Sorting {
 func _initializeBarList() -> [Bar] {
     var out: [Bar] = []
     // starting from 1 to multiply
-    for n in 1...Int((UIScreen.main.bounds.width - 10) / (BarWidth + 10)) {
+    let num = 10
+    //simply use 10 bars
+    //let num = Int((UIScreen.main.bounds.width - 10) / (BarWidth + 10))
+    for n in 1...num {
         let input: CGFloat = (CGFloat(n) * BarUnit)
         out.append(Bar(value: input, selected: false))
         if input >= BarMaxHeight { // shouldn't exceed the max height. stop adding
@@ -50,9 +55,26 @@ func _initializeBarList() -> [Bar] {
 struct SortView: View {
     @Binding var majorView: MajorView
     @State var showSortView = true
+    @State var seletedTab: Int = 0
     var body: some View{
-        NavigationView{
-            SortPanel()
+        ZStack{
+            NavigationView{
+                TabView(selection: $seletedTab){
+                    SortPanel()
+                        .tabItem{
+                            VStack{
+                                Image(systemName: "rectangle.3.group.bubble.left")
+                                Button("View", action: {})
+                            }
+                        }
+                    DataCollectView()
+                        .tabItem{
+                            VStack{
+                                Image(systemName: "list.number")
+                                Button("Data", action: {})
+                            }
+                        }
+                }
                 .navigationTitle("Sort")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
@@ -79,9 +101,13 @@ struct SortView: View {
                             }
                         }
                     }
+                }
             }
-        }.scaleEffect(showSortView ? 1 : 0)
-            .animation(.easeInOut)
+
+        }
+        .scaleEffect(showSortView ? 1 : 0)
+        .animation(.easeInOut)
+        
     }
 }
 
@@ -92,16 +118,16 @@ struct SortPanel: View{
     @State var pickerSelected = 0
     @State var barList: [Bar] = _initializeBarList().shuffled()
     @State var backLog: [Bar]?
-    
+    @State var executing = "to compare..."
     var body: some View {
         ZStack {
-            //Color(#colorLiteral(red: 0, green: 1, blue: 0.895160675, alpha: 1)).edgesIgnoringSafeArea(.all)
+            Color(#colorLiteral(red: 0, green: 1, blue: 0.895160675, alpha: 1)).edgesIgnoringSafeArea(.all)
             
             VStack {
-//                Text("Sortings, Visualized")
-//                .font(.system(size: 32))
-//                .foregroundColor(Color.black)
-//                .fontWeight(.heavy)
+                Text("Sortings, Visualized")
+                .font(.system(size: 32))
+                .foregroundColor(Color.black)
+                .fontWeight(.heavy)
                 
                 Picker(selection: $pickerSelected, label: Text("")) {
                     Text("Bubble").tag(0)
@@ -111,8 +137,7 @@ struct SortPanel: View{
                     Text("Cocktail").tag(4)
                 }.pickerStyle(SegmentedPickerStyle()).padding(.horizontal)
                     .disabled(self.isRunning)
-                
-                HStack(spacing: 5) {
+                HStack(spacing: 8) {
                     ForEach(self.barList, id: \.self) { bar in
                         bar
                     }
@@ -125,6 +150,7 @@ struct SortPanel: View{
                         if self._isSorted() {
                             self._shuffleList()
                         }
+                        
                         if !self.isRunning {
                             self._startSorting()
                         } else if self.isRunning && !self.isPaused{
@@ -138,17 +164,17 @@ struct SortPanel: View{
                             Text("START")
                                 .fontWeight(.heavy)
                                 .font(.system(size: 30))
-                                //.foregroundColor(Color.black)
+                                .foregroundColor(Color.black)
                         } else if self.isRunning && !self.isPaused {
                             Text("PAUSE")
                                 .fontWeight(.heavy)
                                 .font(.system(size: 30))
-                                //.foregroundColor(Color.black)
+                                .foregroundColor(Color.black)
                         } else if self.isRunning && self.isPaused {
                             Text("RESUME")
                                 .fontWeight(.heavy)
                                 .font(.system(size: 30))
-                                //.foregroundColor(Color.black)
+                                .foregroundColor(Color.black)
                         }
                     }
                     
@@ -168,7 +194,7 @@ struct SortPanel: View{
                             Text("SHUFFLE")
                                 .fontWeight(.heavy)
                                 .font(.system(size: 30))
-                                //.foregroundColor(!isRunning ? Color.black: Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
+                                .foregroundColor(!isRunning ? Color.black: Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
                         } else if isRunning {
                             // reset button should always be available
                             // this stop any activity, and reload the bar list
@@ -178,6 +204,10 @@ struct SortPanel: View{
                                 .foregroundColor(Color.black)
                         }
                     }
+                    
+                }
+                if(pickerSelected == 0){
+                    Text(executing)
                 }
             }
         }
@@ -228,12 +258,20 @@ struct SortPanel: View{
         }
     }
     
+    
     // perform bubble sort
     public func _bubbleSort() -> Void {
         let length: Int = self.barList.count
         for i in 0..<length - 1 {
             for j in 0..<length - i - 1 {
                 self.barList[j].selected = true
+                //divide by BarUnit
+                executing = String(format: "%d > %d ? ", Int(self.barList[j].value/BarUnit), Int(self.barList[j+1].value/BarUnit))
+                if Int(self.barList[j].value) > Int(self.barList[j+1].value) {
+                    executing.append("YES")
+                }else {
+                    executing.append("No")
+                }
                 if self.barList[j].value > self.barList[j + 1].value {
                     self._swap(this: j, that: j + 1);
                     return; // timer loop goes on as long as it's valid
