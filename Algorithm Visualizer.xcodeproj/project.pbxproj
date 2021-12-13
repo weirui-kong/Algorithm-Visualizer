@@ -16,6 +16,7 @@
 		0AD893B727672E2F0005CCC4 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB7BA1276724920075DE32 /* Definition.swift */; };
 		0AD893B827672E4C0005CCC4 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB7BA3276724920075DE32 /* Bar.swift */; };
 		0AD893BB276732AB0005CCC4 /* DataCollectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD893BA276732AB0005CCC4 /* DataCollectView.swift */; };
+		0AD893BD276763220005CCC4 /* SortInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD893BC276763220005CCC4 /* SortInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0AD893AC27672DE20005CCC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AD893AF27672DE20005CCC4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0AD893BA276732AB0005CCC4 /* DataCollectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectView.swift; sourceTree = "<group>"; };
+		0AD893BC276763220005CCC4 /* SortInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortInfoView.swift; sourceTree = "<group>"; };
 		0AFB7B9C276724920075DE32 /* SortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortView.swift; sourceTree = "<group>"; };
 		0AFB7B9D276724920075DE32 /* TreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeView.swift; sourceTree = "<group>"; };
 		0AFB7BA1276724920075DE32 /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			children = (
 				0AFB7BA3276724920075DE32 /* Bar.swift */,
 				0AD893BA276732AB0005CCC4 /* DataCollectView.swift */,
+				0AD893BC276763220005CCC4 /* SortInfoView.swift */,
 			);
 			path = SplitView;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				0AD893B827672E4C0005CCC4 /* Bar.swift in Sources */,
 				0AD893B427672E190005CCC4 /* TreeView.swift in Sources */,
 				0AD893BB276732AB0005CCC4 /* DataCollectView.swift in Sources */,
+				0AD893BD276763220005CCC4 /* SortInfoView.swift in Sources */,
 				0AD893B627672E190005CCC4 /* HomeView.swift in Sources */,
 				0AD893B727672E2F0005CCC4 /* Definition.swift in Sources */,
 				0AD893A927672DE00005CCC4 /* AlgoApp.swift in Sources */,

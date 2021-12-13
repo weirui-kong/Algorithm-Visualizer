@@ -22,9 +22,13 @@ struct HomeView: View {
     var body: some View {
         VStack{
             Spacer()
-            Spacer()
-            Text("Choose a mode")
+            Image("icon")
+
+            Text("Eine Funktion")
                 .font(.system(size: 40))
+            Text("Wählen")
+                .font(.system(size: 50))
+
             Text("\n")
             if(signAni){
                 HStack{
@@ -51,7 +55,7 @@ struct HomeView: View {
                     }
                     
                 }) {
-                    Text("Tree Visualizer")
+                    Text("Bäume\nVisualisierung")
                         .font(.system(size: 20))
                 }
                 Spacer()
@@ -61,12 +65,11 @@ struct HomeView: View {
                         signAni = false
                     }
                 }) {
-                    Text("Sort Visualizer")
+                    Text("Staffelung\nVisualisierung")
                         .font(.system(size: 20))
                 }
                 Spacer()
             }
-            Spacer()
             Spacer()
 
         }

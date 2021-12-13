@@ -64,14 +64,21 @@ struct SortView: View {
                         .tabItem{
                             VStack{
                                 Image(systemName: "rectangle.3.group.bubble.left")
-                                Button("View", action: {})
+                                Button("Staffelung", action: {})
                             }
                         }
                     DataCollectView()
                         .tabItem{
                             VStack{
                                 Image(systemName: "list.number")
-                                Button("Data", action: {})
+                                Button("Daten", action: {})
+                            }
+                        }
+                    SortInfoView()
+                        .tabItem{
+                            VStack{
+                                Image(systemName: "doc.fill")
+                                Button("Kenntnis", action: {})
                             }
                         }
                 }
@@ -120,7 +127,7 @@ struct SortPanel: View{
     @State var backLog: [Bar]?
     @State var executing = "to compare..."
     var body: some View {
-        ZStack {
+        ZStack{
             Color(#colorLiteral(red: 0, green: 1, blue: 0.895160675, alpha: 1)).edgesIgnoringSafeArea(.all)
             
             VStack {
@@ -161,20 +168,31 @@ struct SortPanel: View{
                         }
                     }) {
                         if !self.isRunning {
-                            Text("START")
-                                .fontWeight(.heavy)
-                                .font(.system(size: 30))
-                                .foregroundColor(Color.black)
+                            HStack{
+                                Text("  START")
+                                    .fontWeight(.heavy)
+                                    .font(.system(size: 30))
+                                    .foregroundColor(Color.black)
+                                Image(systemName: "restart.circle.fill")
+                            }
+                            
                         } else if self.isRunning && !self.isPaused {
-                            Text("PAUSE")
-                                .fontWeight(.heavy)
-                                .font(.system(size: 30))
-                                .foregroundColor(Color.black)
+                            HStack{
+                                Text("PAUSE")
+                                    .fontWeight(.heavy)
+                                    .font(.system(size: 30))
+                                    .foregroundColor(Color.black)
+                                Image(systemName: "pause.circle")
+                            }
+                            
                         } else if self.isRunning && self.isPaused {
-                            Text("RESUME")
-                                .fontWeight(.heavy)
-                                .font(.system(size: 30))
-                                .foregroundColor(Color.black)
+                            HStack{
+                                Text("RESUME")
+                                    .fontWeight(.heavy)
+                                    .font(.system(size: 30))
+                                    .foregroundColor(Color.black)
+                                Image(systemName: "restart.circle")
+                            }
                         }
                     }
                     
@@ -191,17 +209,24 @@ struct SortPanel: View{
                         }
                     }) {
                         if !isRunning {
-                            Text("SHUFFLE")
-                                .fontWeight(.heavy)
-                                .font(.system(size: 30))
-                                .foregroundColor(!isRunning ? Color.black: Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
+                            HStack{
+                                Image(systemName: "shuffle.circle.fill")
+                                Text("SHUFFLE")
+                                    .fontWeight(.heavy)
+                                    .font(.system(size: 30))
+                                    .foregroundColor(!isRunning ? Color.black: Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
+                            }
                         } else if isRunning {
                             // reset button should always be available
                             // this stop any activity, and reload the bar list
-                            Text("RESET")
-                                .fontWeight(.heavy)
-                                .font(.system(size: 30))
-                                .foregroundColor(Color.black)
+                            HStack{
+                                Image(systemName: "arrow.clockwise")
+                                Text("RESET")
+                                    .fontWeight(.heavy)
+                                    .font(.system(size: 30))
+                                    .foregroundColor(Color.black)
+                            }
+                            
                         }
                     }
                     
