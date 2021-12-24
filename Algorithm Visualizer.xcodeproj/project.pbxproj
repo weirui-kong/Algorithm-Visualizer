@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A60F61727759A1E00E376EE /* Lang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60F61627759A1E00E376EE /* Lang.swift */; };
 		0AD893A927672DE00005CCC4 /* AlgoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD893A827672DE00005CCC4 /* AlgoApp.swift */; };
 		0AD893AD27672DE20005CCC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AD893AC27672DE20005CCC4 /* Assets.xcassets */; };
 		0AD893B027672DE20005CCC4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AD893AF27672DE20005CCC4 /* Preview Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A60F61627759A1E00E376EE /* Lang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lang.swift; sourceTree = "<group>"; };
 		0AD893A627672DE00005CCC4 /* Algo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Algo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AD893A827672DE00005CCC4 /* AlgoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoApp.swift; sourceTree = "<group>"; };
 		0AD893AC27672DE20005CCC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 		0AD893A727672DE00005CCC4 /* Algo */ = {
 			isa = PBXGroup;
 			children = (
+				0AD893BE2768367D0005CCC4 /* Localization */,
 				0AD893B92767327C0005CCC4 /* SplitView */,
 				0AD893A827672DE00005CCC4 /* AlgoApp.swift */,
 				0AFB7BB2276724930075DE32 /* HomeView.swift */,
@@ -76,6 +79,14 @@
 				0AD893BC276763220005CCC4 /* SortInfoView.swift */,
 			);
 			path = SplitView;
+			sourceTree = "<group>";
+		};
+		0AD893BE2768367D0005CCC4 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				0A60F61627759A1E00E376EE /* Lang.swift */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		30ED15E9244E887600B144C3 = {
@@ -173,6 +184,7 @@
 				0AD893B427672E190005CCC4 /* TreeView.swift in Sources */,
 				0AD893BB276732AB0005CCC4 /* DataCollectView.swift in Sources */,
 				0AD893BD276763220005CCC4 /* SortInfoView.swift in Sources */,
+				0A60F61727759A1E00E376EE /* Lang.swift in Sources */,
 				0AD893B627672E190005CCC4 /* HomeView.swift in Sources */,
 				0AD893B727672E2F0005CCC4 /* Definition.swift in Sources */,
 				0AD893A927672DE00005CCC4 /* AlgoApp.swift in Sources */,

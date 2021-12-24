@@ -64,25 +64,25 @@ struct SortView: View {
                         .tabItem{
                             VStack{
                                 Image(systemName: "rectangle.3.group.bubble.left")
-                                Button("Staffelung", action: {})
+                                Button(getLocalizedTextCapitalized(key: "sort"), action: {})
                             }
                         }
-                    DataCollectView()
-                        .tabItem{
-                            VStack{
-                                Image(systemName: "list.number")
-                                Button("Daten", action: {})
-                            }
-                        }
+                    //                    DataCollectView()
+                    //                        .tabItem{
+                    //                            VStack{
+                    //                                Image(systemName: "list.number")
+                    //                                Button("Daten", action: {})
+                    //                            }
+                    //                        }
                     SortInfoView()
                         .tabItem{
                             VStack{
                                 Image(systemName: "doc.fill")
-                                Button("Kenntnis", action: {})
+                                Button(getLocalizedTextCapitalized(key: "information"), action: {})
                             }
                         }
                 }
-                .navigationTitle("Sort")
+                .navigationTitle(getLocalizedTextCapitalized(key: "sort"))
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         HStack{
@@ -110,7 +110,7 @@ struct SortView: View {
                     }
                 }
             }
-
+            
         }
         .scaleEffect(showSortView ? 1 : 0)
         .animation(.easeInOut)
@@ -131,17 +131,17 @@ struct SortPanel: View{
             Color(#colorLiteral(red: 0, green: 1, blue: 0.895160675, alpha: 1)).edgesIgnoringSafeArea(.all)
             
             VStack {
-                Text("Sortings, Visualized")
-                .font(.system(size: 32))
-                .foregroundColor(Color.black)
-                .fontWeight(.heavy)
+                Text(getLocalizedTextCapitalized(key: "sort visualization"))
+                    .font(.system(size: 32))
+                    .foregroundColor(Color.black)
+                    .fontWeight(.heavy)
                 
                 Picker(selection: $pickerSelected, label: Text("")) {
-                    Text("Bubble").tag(0)
-                    Text("Selection").tag(1)
-                    Text("Quick").tag(2)
-                    Text("Merge").tag(3)
-                    Text("Cocktail").tag(4)
+                    Text(getLocalizedTextCapitalized(key: "bubble")).tag(0)
+                    Text(getLocalizedTextCapitalized(key: "selection")).tag(1)
+                    Text(getLocalizedTextCapitalized(key: "quick")).tag(2)
+                    Text(getLocalizedTextCapitalized(key: "merge")).tag(3)
+                    Text(getLocalizedTextCapitalized(key: "cocktail")).tag(4)
                 }.pickerStyle(SegmentedPickerStyle()).padding(.horizontal)
                     .disabled(self.isRunning)
                 HStack(spacing: 8) {
@@ -149,8 +149,8 @@ struct SortPanel: View{
                         bar
                     }
                 }.padding(.top, 28).padding(.bottom, 28)
-                .animation(.default)
-                    
+                    .animation(.default)
+                
                 
                 HStack(spacing: 30) {
                     Button(action: {
@@ -169,7 +169,7 @@ struct SortPanel: View{
                     }) {
                         if !self.isRunning {
                             HStack{
-                                Text("  START")
+                                Text(getLocalizedTextCapitalized(key: "start"))//start
                                     .fontWeight(.heavy)
                                     .font(.system(size: 30))
                                     .foregroundColor(Color.black)
@@ -178,7 +178,7 @@ struct SortPanel: View{
                             
                         } else if self.isRunning && !self.isPaused {
                             HStack{
-                                Text("PAUSE")
+                                Text(getLocalizedTextCapitalized(key: "pause"))//pause
                                     .fontWeight(.heavy)
                                     .font(.system(size: 30))
                                     .foregroundColor(Color.black)
@@ -187,7 +187,7 @@ struct SortPanel: View{
                             
                         } else if self.isRunning && self.isPaused {
                             HStack{
-                                Text("RESUME")
+                                Text(getLocalizedTextCapitalized(key: "resume"))//resume
                                     .fontWeight(.heavy)
                                     .font(.system(size: 30))
                                     .foregroundColor(Color.black)
@@ -211,7 +211,7 @@ struct SortPanel: View{
                         if !isRunning {
                             HStack{
                                 Image(systemName: "shuffle.circle.fill")
-                                Text("SHUFFLE")
+                                Text(getLocalizedTextCapitalized(key: "shuffle"))//shuffle
                                     .fontWeight(.heavy)
                                     .font(.system(size: 30))
                                     .foregroundColor(!isRunning ? Color.black: Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
@@ -221,7 +221,7 @@ struct SortPanel: View{
                             // this stop any activity, and reload the bar list
                             HStack{
                                 Image(systemName: "arrow.clockwise")
-                                Text("RESET")
+                                Text(getLocalizedTextCapitalized(key: "reset"))//reset
                                     .fontWeight(.heavy)
                                     .font(.system(size: 30))
                                     .foregroundColor(Color.black)
@@ -251,9 +251,9 @@ struct SortPanel: View{
         case 2: _performSorting(kind: .quick)
         case 3: _performSorting(kind: .merge)
         case 4: _performSorting(kind: .cocktail)
-            default:
-                print("invalid picker input!")
-                self._shuffleList()
+        default:
+            print("invalid picker input!")
+            self._shuffleList()
         }
     }
     
@@ -343,7 +343,7 @@ struct SortPanel: View{
         if start < end {
             let midPoint: Int = (start + end) / 2
             self.barList[midPoint].selected = true
-
+            
             self._mergeSort(start: start, end: midPoint)
             self._mergeSort(start: midPoint + 1, end: end)
             
@@ -361,7 +361,7 @@ struct SortPanel: View{
         
         while swapped == true {
             swapped = false;
-
+            
             for i in start..<end - 1 {
                 if (self.barList[i].value > self.barList[i + 1].value) {
                     self.barList[i].selected = true
@@ -437,7 +437,7 @@ struct SortPanel: View{
         
         return smallestIndex
     }
-
+    
     // Merge sort helper
     // This merges two different subarrays from merge sort
     func _merge(left: Int, mid: Int, right: Int) -> Void {
@@ -457,24 +457,24 @@ struct SortPanel: View{
             }
             newIndex += 1
         }
-
+        
         while leftIndex <= mid {
             temp[newIndex] = self.barList[leftIndex];
             newIndex += 1
             leftIndex += 1
         }
-
+        
         while rightIndex <= right {
             temp[newIndex] = self.barList[rightIndex];
             newIndex += 1
             rightIndex += 1
         }
-
+        
         for m in left...right {
             self.barList[m] = temp[m - left] ?? Bar(value: 10, selected: false)
         }
     }
-
+    
     //============================================================
     
     

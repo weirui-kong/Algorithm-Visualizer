@@ -21,6 +21,7 @@ extension AnyTransition {
         AnyTransition.move(edge: .bottom)
     }
 }
+var appLangType : LangType = .ChineseTR
 @main
 struct Algorithm_VisualizerApp: App {
     @State var majorView = MajorView.home
@@ -31,7 +32,7 @@ struct Algorithm_VisualizerApp: App {
                 switch majorView {
                 case MajorView.home:
                     HomeView(majorView: $majorView, signAni: true)
-                        //.transition(.moveAndFade)
+                    //.transition(.moveAndFade)
                 case MajorView.tree:
                     TreeView(majorView: $majorView, showTreeView: true)
                         .transition(.moveAndFade)

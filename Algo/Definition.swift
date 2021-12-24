@@ -18,3 +18,8 @@ enum TreeType {
     case BST //Binary search tree
     case BBST //Balanced binary search tree
 }
+enum Lang{
+    case English
+    case Chinese
+    case German
+}
