@@ -21,7 +21,7 @@ extension AnyTransition {
         AnyTransition.move(edge: .bottom)
     }
 }
-var appLangType : LangType = .ChineseTR
+var appLangType : LangType = .German
 @main
 struct Algorithm_VisualizerApp: App {
     @State var majorView = MajorView.home

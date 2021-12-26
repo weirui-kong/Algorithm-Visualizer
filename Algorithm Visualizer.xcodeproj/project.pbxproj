@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A3636CF27789B9300535AD3 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0A3636CE27789B9300535AD3 /* MarkdownUI */; };
+		0A3636D12778A17700535AD3 /* SortPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3636D02778A17700535AD3 /* SortPanelView.swift */; };
 		0A60F61727759A1E00E376EE /* Lang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60F61627759A1E00E376EE /* Lang.swift */; };
 		0AD893A927672DE00005CCC4 /* AlgoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD893A827672DE00005CCC4 /* AlgoApp.swift */; };
 		0AD893AD27672DE20005CCC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AD893AC27672DE20005CCC4 /* Assets.xcassets */; };
@@ -16,17 +18,17 @@
 		0AD893B627672E190005CCC4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB7BB2276724930075DE32 /* HomeView.swift */; };
 		0AD893B727672E2F0005CCC4 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB7BA1276724920075DE32 /* Definition.swift */; };
 		0AD893B827672E4C0005CCC4 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB7BA3276724920075DE32 /* Bar.swift */; };
-		0AD893BB276732AB0005CCC4 /* DataCollectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD893BA276732AB0005CCC4 /* DataCollectView.swift */; };
 		0AD893BD276763220005CCC4 /* SortInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD893BC276763220005CCC4 /* SortInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A3636CC27786FBD00535AD3 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		0A3636D02778A17700535AD3 /* SortPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortPanelView.swift; sourceTree = "<group>"; };
 		0A60F61627759A1E00E376EE /* Lang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lang.swift; sourceTree = "<group>"; };
 		0AD893A627672DE00005CCC4 /* Algo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Algo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AD893A827672DE00005CCC4 /* AlgoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoApp.swift; sourceTree = "<group>"; };
 		0AD893AC27672DE20005CCC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AD893AF27672DE20005CCC4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		0AD893BA276732AB0005CCC4 /* DataCollectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectView.swift; sourceTree = "<group>"; };
 		0AD893BC276763220005CCC4 /* SortInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortInfoView.swift; sourceTree = "<group>"; };
 		0AFB7B9C276724920075DE32 /* SortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortView.swift; sourceTree = "<group>"; };
 		0AFB7B9D276724920075DE32 /* TreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeView.swift; sourceTree = "<group>"; };
@@ -41,12 +43,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A3636CF27789B9300535AD3 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A3636CA2778686700535AD3 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		0AD893A727672DE00005CCC4 /* Algo */ = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +69,7 @@
 				0AFB7BA1276724920075DE32 /* Definition.swift */,
 				0AD893AC27672DE20005CCC4 /* Assets.xcassets */,
 				0AD893AE27672DE20005CCC4 /* Preview Content */,
+				0A3636CC27786FBD00535AD3 /* LICENSE.md */,
 			);
 			path = Algo;
 			sourceTree = "<group>";
@@ -75,8 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				0AFB7BA3276724920075DE32 /* Bar.swift */,
-				0AD893BA276732AB0005CCC4 /* DataCollectView.swift */,
 				0AD893BC276763220005CCC4 /* SortInfoView.swift */,
+				0A3636D02778A17700535AD3 /* SortPanelView.swift */,
 			);
 			path = SplitView;
 			sourceTree = "<group>";
@@ -92,6 +103,7 @@
 		30ED15E9244E887600B144C3 = {
 			isa = PBXGroup;
 			children = (
+				0A3636CA2778686700535AD3 /* Packages */,
 				0AFB7BC5276725F30075DE32 /* README.md */,
 				0AD893A727672DE00005CCC4 /* Algo */,
 				30ED15F3244E887600B144C3 /* Products */,
@@ -122,6 +134,9 @@
 			dependencies = (
 			);
 			name = Algo;
+			packageProductDependencies = (
+				0A3636CE27789B9300535AD3 /* MarkdownUI */,
+			);
 			productName = Algo;
 			productReference = 0AD893A627672DE00005CCC4 /* Algo.app */;
 			productType = "com.apple.product-type.application";
@@ -153,6 +168,9 @@
 				Base,
 			);
 			mainGroup = 30ED15E9244E887600B144C3;
+			packageReferences = (
+				0A3636CD27789B9300535AD3 /* XCRemoteSwiftPackageReference "MarkdownUI" */,
+			);
 			productRefGroup = 30ED15F3244E887600B144C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -180,9 +198,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AD893B527672E190005CCC4 /* SortView.swift in Sources */,
+				0A3636D12778A17700535AD3 /* SortPanelView.swift in Sources */,
 				0AD893B827672E4C0005CCC4 /* Bar.swift in Sources */,
 				0AD893B427672E190005CCC4 /* TreeView.swift in Sources */,
-				0AD893BB276732AB0005CCC4 /* DataCollectView.swift in Sources */,
 				0AD893BD276763220005CCC4 /* SortInfoView.swift in Sources */,
 				0A60F61727759A1E00E376EE /* Lang.swift in Sources */,
 				0AD893B627672E190005CCC4 /* HomeView.swift in Sources */,
@@ -394,6 +412,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0A3636CD27789B9300535AD3 /* XCRemoteSwiftPackageReference "MarkdownUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/MarkdownUI";
+			requirement = {
+				kind = exactVersion;
+				version = 0.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0A3636CE27789B9300535AD3 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A3636CD27789B9300535AD3 /* XCRemoteSwiftPackageReference "MarkdownUI" */;
+			productName = MarkdownUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 30ED15EA244E887600B144C3 /* Project object */;
 }
