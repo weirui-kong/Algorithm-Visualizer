@@ -34,6 +34,8 @@ struct TreeView: View {
         print("function not finished")
         return "function not finished"
     }
+    
+    
     //    var treeName = {() -> String in
     //        switch(selectedTreeType){
     //        case .BT:
