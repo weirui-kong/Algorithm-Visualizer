@@ -15,9 +15,8 @@ let BarColor_Default: Color = .white
 let BarColr_Selected: Color = .purple
 
 var timer: Timer?
-var generalCounter: Int = 0
-var cockTailShaker: Bool = false // this allows to visualize 'cocktail shaker' which takes turns on each end
 
+var cockTailShaker: Bool = false // this allows to visualize 'cocktail shaker' which takes turns on each end
 
 struct SortView: View{
     @Binding var majorView: MajorView

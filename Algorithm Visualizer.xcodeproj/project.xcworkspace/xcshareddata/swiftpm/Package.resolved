@@ -38,6 +38,15 @@
         }
       },
       {
+        "package": "RichText",
+        "repositoryURL": "https://github.com/NuPlay/RichText",
+        "state": {
+          "branch": "main",
+          "revision": "fedbe642011027ce32e8e1c109a1424ac61863df",
+          "version": null
+        }
+      },
+      {
         "package": "cmark",
         "repositoryURL": "https://github.com/SwiftDocOrg/swift-cmark.git",
         "state": {

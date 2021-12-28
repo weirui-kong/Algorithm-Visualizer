@@ -22,7 +22,7 @@ struct SortPanelView: View {
             VStack {
                 Text(getLocalizedTextCapitalized(key: "sort visualization"))
                     .font(.system(size: 32))
-                    .foregroundColor(Color.black)
+                    //.foregroundColor(Color.black)
                     .fontWeight(.heavy)
                 
                 Picker(selection: $pickerSelected, label: Text("")) {
@@ -61,7 +61,6 @@ struct SortPanelView: View {
                                 Text(getLocalizedTextCapitalized(key: "start"))//start
                                     .fontWeight(.heavy)
                                     .font(.system(size: 30))
-                                    .foregroundColor(Color.black)
                                 Image(systemName: "restart.circle.fill")
                             }
                             
@@ -70,8 +69,7 @@ struct SortPanelView: View {
                                 Text(getLocalizedTextCapitalized(key: "pause"))//pause
                                     .fontWeight(.heavy)
                                     .font(.system(size: 30))
-                                    .foregroundColor(Color.black)
-                                Image(systemName: "pause.circle")
+                                 Image(systemName: "pause.circle")
                             }
                             
                         } else if self.isRunning && self.isPaused {
@@ -79,7 +77,6 @@ struct SortPanelView: View {
                                 Text(getLocalizedTextCapitalized(key: "resume"))//resume
                                     .fontWeight(.heavy)
                                     .font(.system(size: 30))
-                                    .foregroundColor(Color.black)
                                 Image(systemName: "restart.circle")
                             }
                         }
@@ -103,7 +100,7 @@ struct SortPanelView: View {
                                 Text(getLocalizedTextCapitalized(key: "shuffle"))//shuffle
                                     .fontWeight(.heavy)
                                     .font(.system(size: 30))
-                                    .foregroundColor(!isRunning ? Color.black: Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
+                                    //.foregroundColor(!isRunning ? Color.black: Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
                             }
                         } else if isRunning {
                             // reset button should always be available
@@ -113,16 +110,15 @@ struct SortPanelView: View {
                                 Text(getLocalizedTextCapitalized(key: "reset"))//reset
                                     .fontWeight(.heavy)
                                     .font(.system(size: 30))
-                                    .foregroundColor(Color.black)
                             }
                             
                         }
                     }
                     
                 }
-                if(pickerSelected == 0){
-                    Text(executing)
-                }
+                Text(executing)
+                
+                
             }
         }
     }
@@ -200,25 +196,27 @@ struct SortPanelView: View {
         }
         endOperation()
     }
-    
+    @State var generalCounter: Int = 0
+    @State var minIndex: Int = 0
     // perform selection sort
     public func _selectionSort() -> Void {
         let length: Int = self.barList.count
         
         for i in generalCounter..<length - 1 {
             generalCounter += 1
-            var minIndex: Int = i
-            
+            minIndex = i
+            executing = "\(getLocalizedTextCapitalized(key: "minimum value")):\(minIndex + 1)"
             for j in i + 1..<length {
                 if barList[j].value < barList[minIndex].value {
                     minIndex = j
                 }
             }
-            self.barList[i].selected = true
+            //self.barList[i].selected = true
             self.barList[minIndex].selected = true
             self._swap(this: i, that: minIndex)
             return;
         }
+        //self.barList[length-1].selected = true
         endOperation()
     }
     
@@ -243,6 +241,7 @@ struct SortPanelView: View {
             self._mergeSort(start: midPoint + 1, end: end)
             
             self._merge(left: start, mid: midPoint, right: end)
+            
         }
         endOperation()
     }
@@ -299,11 +298,17 @@ struct SortPanelView: View {
     
     // this ends sorting operation, and reset states
     func endOperation() -> Void {
+        for i in 0..<barList.count{
+            barList[i].moving = false;
+            barList[i].selected = true;
+        }
         timer?.invalidate() // invalidate timer loop
         isRunning = false // update running status once sorting is finished
         isPaused = false
         backLog = nil
         generalCounter = 0
+        executing = ""
+        
     }
     
     // validate if barList is sorted properly

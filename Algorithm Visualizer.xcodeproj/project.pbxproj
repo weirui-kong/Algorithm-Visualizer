@@ -10,6 +10,7 @@
 		0A3636CF27789B9300535AD3 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0A3636CE27789B9300535AD3 /* MarkdownUI */; };
 		0A3636D12778A17700535AD3 /* SortPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3636D02778A17700535AD3 /* SortPanelView.swift */; };
 		0A60F61727759A1E00E376EE /* Lang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60F61627759A1E00E376EE /* Lang.swift */; };
+		0A862130277B32DD00F9D44F /* RichText in Frameworks */ = {isa = PBXBuildFile; productRef = 0A86212F277B32DD00F9D44F /* RichText */; };
 		0AD893A927672DE00005CCC4 /* AlgoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD893A827672DE00005CCC4 /* AlgoApp.swift */; };
 		0AD893AD27672DE20005CCC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AD893AC27672DE20005CCC4 /* Assets.xcassets */; };
 		0AD893B027672DE20005CCC4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AD893AF27672DE20005CCC4 /* Preview Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A09C83D277B758B00856871 /* Curriculum Design */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Curriculum Design"; sourceTree = "<group>"; };
 		0A3636CC27786FBD00535AD3 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		0A3636D02778A17700535AD3 /* SortPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortPanelView.swift; sourceTree = "<group>"; };
 		0A60F61627759A1E00E376EE /* Lang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lang.swift; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A3636CF27789B9300535AD3 /* MarkdownUI in Frameworks */,
+				0A862130277B32DD00F9D44F /* RichText in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,15 +60,23 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
-		0AD893A727672DE00005CCC4 /* Algo */ = {
+		0A86212D277B308700F9D44F /* MajorView */ = {
 			isa = PBXGroup;
 			children = (
-				0AD893BE2768367D0005CCC4 /* Localization */,
-				0AD893B92767327C0005CCC4 /* SplitView */,
-				0AD893A827672DE00005CCC4 /* AlgoApp.swift */,
 				0AFB7BB2276724930075DE32 /* HomeView.swift */,
 				0AFB7B9D276724920075DE32 /* TreeView.swift */,
 				0AFB7B9C276724920075DE32 /* SortView.swift */,
+			);
+			path = MajorView;
+			sourceTree = "<group>";
+		};
+		0AD893A727672DE00005CCC4 /* Algo */ = {
+			isa = PBXGroup;
+			children = (
+				0A86212D277B308700F9D44F /* MajorView */,
+				0AD893BE2768367D0005CCC4 /* Localization */,
+				0AD893B92767327C0005CCC4 /* SplitView */,
+				0AD893A827672DE00005CCC4 /* AlgoApp.swift */,
 				0AFB7BA1276724920075DE32 /* Definition.swift */,
 				0AD893AC27672DE20005CCC4 /* Assets.xcassets */,
 				0AD893AE27672DE20005CCC4 /* Preview Content */,
@@ -103,6 +114,7 @@
 		30ED15E9244E887600B144C3 = {
 			isa = PBXGroup;
 			children = (
+				0A09C83D277B758B00856871 /* Curriculum Design */,
 				0A3636CA2778686700535AD3 /* Packages */,
 				0AFB7BC5276725F30075DE32 /* README.md */,
 				0AD893A727672DE00005CCC4 /* Algo */,
@@ -136,6 +148,7 @@
 			name = Algo;
 			packageProductDependencies = (
 				0A3636CE27789B9300535AD3 /* MarkdownUI */,
+				0A86212F277B32DD00F9D44F /* RichText */,
 			);
 			productName = Algo;
 			productReference = 0AD893A627672DE00005CCC4 /* Algo.app */;
@@ -170,6 +183,7 @@
 			mainGroup = 30ED15E9244E887600B144C3;
 			packageReferences = (
 				0A3636CD27789B9300535AD3 /* XCRemoteSwiftPackageReference "MarkdownUI" */,
+				0A86212E277B32DD00F9D44F /* XCRemoteSwiftPackageReference "RichText" */,
 			);
 			productRefGroup = 30ED15F3244E887600B144C3 /* Products */;
 			projectDirPath = "";
@@ -422,6 +436,14 @@
 				version = 0.5.2;
 			};
 		};
+		0A86212E277B32DD00F9D44F /* XCRemoteSwiftPackageReference "RichText" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NuPlay/RichText";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -429,6 +451,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0A3636CD27789B9300535AD3 /* XCRemoteSwiftPackageReference "MarkdownUI" */;
 			productName = MarkdownUI;
+		};
+		0A86212F277B32DD00F9D44F /* RichText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A86212E277B32DD00F9D44F /* XCRemoteSwiftPackageReference "RichText" */;
+			productName = RichText;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
