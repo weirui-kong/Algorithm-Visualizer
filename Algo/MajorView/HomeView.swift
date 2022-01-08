@@ -19,7 +19,6 @@ struct HomeView: View {
             .repeatForever(autoreverses: signAni) //使动画来回反弹
         
     }
-    
     var body: some View {
         if(showView){
             VStack{
@@ -42,7 +41,8 @@ struct HomeView: View {
                                 .onAppear(perform: {
                                     angle += 90 - 15 + 601
                                     scale += 0.4 / 6.0
-                                })}
+                                })
+                        }
                     }
                 }
                 Text("\n")
@@ -53,7 +53,6 @@ struct HomeView: View {
                             majorView = MajorView.tree
                             signAni = false
                         }
-                        
                     }) {
                         Text(getLocalizedTextCapitalized(key: "tree visualization_newline").capitalized)
                             .font(.system(size: 20))
@@ -70,7 +69,6 @@ struct HomeView: View {
                     }
                     Spacer()
                 }
-                
                 Spacer()
                 Menu("💬💬"){
                     Button(LangType.English.rawValue){
@@ -97,9 +95,7 @@ struct HomeView: View {
             }
             .animation(.easeInOut)
         }
-        
     }
-    
 }
 
 //struct HomeView_Previews: PreviewProvider {

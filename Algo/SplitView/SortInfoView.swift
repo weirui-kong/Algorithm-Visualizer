@@ -13,7 +13,6 @@ struct SortInfoView: View {
     var body: some View {
             VStack{
                 RichText(html: sort_document)
-                
             }
     }
 }

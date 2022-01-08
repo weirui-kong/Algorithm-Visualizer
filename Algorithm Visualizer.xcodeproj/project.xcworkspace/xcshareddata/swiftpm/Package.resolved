@@ -23,9 +23,9 @@
         "package": "MarkdownUI",
         "repositoryURL": "https://github.com/gonzalezreal/MarkdownUI",
         "state": {
-          "branch": null,
-          "revision": "29d94710545952dd4c724cc2ca901848eef54ded",
-          "version": "0.5.2"
+          "branch": "main",
+          "revision": "42526bc20057ea1478b0d1c95b5f87a58757736a",
+          "version": null
         }
       },
       {

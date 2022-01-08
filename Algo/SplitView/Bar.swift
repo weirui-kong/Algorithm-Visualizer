@@ -14,7 +14,13 @@ struct Bar: View, Hashable {
                     .scaleEffect(moving ? 1.05 : 1)
                     .animation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0.2))
                 Capsule().frame(width: BarWidth * (moving ? 1.1 : 1), height: value)
-                    .foregroundColor(selected ? Color(#colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)).opacity(moving ? 0.8 : 0.3) : .blue.opacity(0.2))
+                    .foregroundColor(selected
+                                     ?Color(#colorLiteral(red: 0.9568627477,
+                                                          green: 0.6588235497,
+                                                          blue: 0.5450980663,
+                                                          alpha: 1))
+                                        .opacity(moving ? 0.8 : 0.3)
+                                     : .blue.opacity(0.2))
                     //.shadow(color: .gray, radius: moving ? 4 : 0, x: moving ? 5 : 0, y: moving ? 5 : 0)
                     .scaleEffect(moving ? 1.05 : 1)
                     .animation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0.2))

@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A3636CF27789B9300535AD3 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0A3636CE27789B9300535AD3 /* MarkdownUI */; };
+		0A09C841277C3AC600856871 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0A09C840277C3AC600856871 /* MarkdownUI */; };
+		0A09C844277C3AEE00856871 /* RichText in Frameworks */ = {isa = PBXBuildFile; productRef = 0A09C843277C3AEE00856871 /* RichText */; };
 		0A3636D12778A17700535AD3 /* SortPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3636D02778A17700535AD3 /* SortPanelView.swift */; };
 		0A60F61727759A1E00E376EE /* Lang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60F61627759A1E00E376EE /* Lang.swift */; };
-		0A862130277B32DD00F9D44F /* RichText in Frameworks */ = {isa = PBXBuildFile; productRef = 0A86212F277B32DD00F9D44F /* RichText */; };
 		0AD893A927672DE00005CCC4 /* AlgoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD893A827672DE00005CCC4 /* AlgoApp.swift */; };
 		0AD893AD27672DE20005CCC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AD893AC27672DE20005CCC4 /* Assets.xcassets */; };
 		0AD893B027672DE20005CCC4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AD893AF27672DE20005CCC4 /* Preview Assets.xcassets */; };
@@ -45,8 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A3636CF27789B9300535AD3 /* MarkdownUI in Frameworks */,
-				0A862130277B32DD00F9D44F /* RichText in Frameworks */,
+				0A09C841277C3AC600856871 /* MarkdownUI in Frameworks */,
+				0A09C844277C3AEE00856871 /* RichText in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,8 +147,8 @@
 			);
 			name = Algo;
 			packageProductDependencies = (
-				0A3636CE27789B9300535AD3 /* MarkdownUI */,
-				0A86212F277B32DD00F9D44F /* RichText */,
+				0A09C840277C3AC600856871 /* MarkdownUI */,
+				0A09C843277C3AEE00856871 /* RichText */,
 			);
 			productName = Algo;
 			productReference = 0AD893A627672DE00005CCC4 /* Algo.app */;
@@ -182,8 +182,8 @@
 			);
 			mainGroup = 30ED15E9244E887600B144C3;
 			packageReferences = (
-				0A3636CD27789B9300535AD3 /* XCRemoteSwiftPackageReference "MarkdownUI" */,
-				0A86212E277B32DD00F9D44F /* XCRemoteSwiftPackageReference "RichText" */,
+				0A09C83F277C3AC600856871 /* XCRemoteSwiftPackageReference "MarkdownUI" */,
+				0A09C842277C3AED00856871 /* XCRemoteSwiftPackageReference "RichText" */,
 			);
 			productRefGroup = 30ED15F3244E887600B144C3 /* Products */;
 			projectDirPath = "";
@@ -428,15 +428,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0A3636CD27789B9300535AD3 /* XCRemoteSwiftPackageReference "MarkdownUI" */ = {
+		0A09C83F277C3AC600856871 /* XCRemoteSwiftPackageReference "MarkdownUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/gonzalezreal/MarkdownUI";
 			requirement = {
-				kind = exactVersion;
-				version = 0.5.2;
+				branch = main;
+				kind = branch;
 			};
 		};
-		0A86212E277B32DD00F9D44F /* XCRemoteSwiftPackageReference "RichText" */ = {
+		0A09C842277C3AED00856871 /* XCRemoteSwiftPackageReference "RichText" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/NuPlay/RichText";
 			requirement = {
@@ -447,14 +447,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0A3636CE27789B9300535AD3 /* MarkdownUI */ = {
+		0A09C840277C3AC600856871 /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0A3636CD27789B9300535AD3 /* XCRemoteSwiftPackageReference "MarkdownUI" */;
+			package = 0A09C83F277C3AC600856871 /* XCRemoteSwiftPackageReference "MarkdownUI" */;
 			productName = MarkdownUI;
 		};
-		0A86212F277B32DD00F9D44F /* RichText */ = {
+		0A09C843277C3AEE00856871 /* RichText */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0A86212E277B32DD00F9D44F /* XCRemoteSwiftPackageReference "RichText" */;
+			package = 0A09C842277C3AED00856871 /* XCRemoteSwiftPackageReference "RichText" */;
 			productName = RichText;
 		};
 /* End XCSwiftPackageProductDependency section */
